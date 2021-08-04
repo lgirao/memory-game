@@ -4,21 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width" initial-scale=1.0">
+
+    <!-- GOOGLE FONT MONTSERRAT 400 & 700 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
     <link rel="stylesheet" href="style.css">
     <title>Memory Game</title>
 </head>
 <body>
-    <h1>Memory Game</h1>
-    
-    <div class="container">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+    <div class="header">
+        <h1>Memory Game</h1>
+        <div class="moves">Moves: <span class="num-moves">0</span></div>
     </div>
+    
+    <section class="memory-container">
+        <div class="card" data-name="lollipop" style="order: 1">
+            <div class="card-front"></div>
+            <div class="lollipop card-back"></div>
+        </div>
+        <div class="card" data-name="lollipop" style="order: 2">
+            <div class="card-front"></div>
+            <div class="lollipop card-back"></div>
+        </div>
+        <div class="card" data-name="popsicle" style="order: 3">
+            <div class="card-front"></div>
+            <div class="popsicle card-back"></div>
+        </div>
+        <div class="card" data-name="popsicle" style="order: 4">
+            <div class="card-front"></div>
+            <div class="popsicle card-back"></div>
+        </div>
+        <div class="card" data-name="cupcake" style="order: 5">
+            <div class="card-front"></div>
+            <div class="cupcake card-back"></div>
+        </div>
+        <div class="card" data-name="cupcake" style="order: 6">
+            <div class="card-front"></div>
+            <div class="cupcake card-back"></div>
+        </div>
+    </section>
     
 
     <!-- <script src="bootstrap.bundle.js"></script> -->

@@ -1,27 +1,104 @@
-body {
+* {
+    box-sizing: border-box;
+}
+
+html, body{
     margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    background: #d6dbe2;
 }
 
 h1 {
-    text-align: center;
+    font-size: 2.25rem;
 }
 
-.container {
+.memory-container {
     max-width: 690px;
     margin: 20px auto;
     display: flex;
     flex-flow: row wrap;
+    perspective: 1000px;
 }
 
-.square {
+.card {
     width: 30%;
     background: #9c9ebb;
     aspect-ratio: 1/1;
+    border-radius: 12px;
     margin: 1.66%;
+    box-shadow: 8px 10px 22px rgba(0, 0, 0, 0.15);
+    backface-visibility: hidden;
 }
 
+.lollipop {
+    background-image: url('https://images.unsplash.com/photo-1575224300306-1b8da36134ec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FuZHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=350&q=60');
+    background-position: cover;
+}
 
+.popsicle {
+    background-image: url('https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cG9wc2ljbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=350&q=60');
+    background-position: cover;
+}
 
+.cupcake {
+    background-image: url('https://images.unsplash.com/photo-1599785209707-a456fc1337bb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3VwY2FrZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=350&q=60');
+    background-position: cover;
+}
+
+.card-back {
+    height: 0;
+    padding-bottom: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform-style: preserve-3d;
+    transition: .4s all linear;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.card.flip .card-front, .card.flip .card-back{
+    transform: rotateY(0deg);
+}
+
+.card-front {
+    height: 100%;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+    transition: .4s all linear;
+    /* display: inline-block; */
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: linear-gradient(to right bottom, #b2cdf6, #a5c5f6, #97bdf6, #89b5f6, #7badf6);
+    box-shadow: 3px 6px 18px #6d809d8a;
+    border-radius: 8px;
+}
+
+.card-ok .card-front{
+    background-image: linear-gradient(to right bottom, #b2f6b4, #a5f6b0, #a1f697, #7bdb8b, #76d679);
+    opacity: 0.7;
+}
+
+/* .restart {
+    font-family: 'Montserrat', serif;
+    font-size: 14px;
+    margin-top: 25px;
+    line-height: 40px;
+    display: inline-block;
+    padding: 0 15px;
+    background-color: #7badf6;
+    cursor: pointer;
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0px 4px 10px #6781a78a;
+} */
 
 
 
