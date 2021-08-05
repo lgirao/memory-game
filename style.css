@@ -6,39 +6,132 @@ html, body{
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    text-align: center;
-    background: #d6dbe2;
+    background: #f3d9ca;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h1 {
     font-size: 2.25rem;
 }
 
-.memory-container {
-    max-width: 690px;
+/* CARD STYLES */
+.deck {
+    width: 600px;
+	background: #907AD6;
+	padding: .75rem;
+	border-radius: 4px;
+	box-shadow: 8px 9px 26px 0 rgba(46, 61, 73, 0.5);
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 0 3em;
+    /* max-width: 690px;
     margin: 20px auto;
     display: flex;
     flex-flow: row wrap;
-    perspective: 1000px;
+    perspective: 1000px; */
 }
 
 .card {
-    width: 30%;
+    height: 10rem;
+	width: 10rem;
+	margin: 0.2rem 0.2rem;
+	background: #141214;;
+	font-size: 0;
+	color: #ffffff;
+	border-radius: 5px;
+	cursor: pointer;
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    /* width: 30%;
     background: #9c9ebb;
     aspect-ratio: 1/1;
     border-radius: 12px;
     margin: 1.66%;
     box-shadow: 8px 10px 22px rgba(0, 0, 0, 0.15);
-    backface-visibility: hidden;
+    backface-visibility: hidden; */
 }
 
-.lollipop {
+img {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 5px;
+}
+
+.deck .card.open {
+	transform: rotateY(0);
+	background: #02b3e4;
+	cursor: default;
+	animation-name: flipInY;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.show {
+	font-size: 33px;
+}
+
+.deck .card.match {
+	cursor: default;
+	background: #E5F720;
+	font-size: 33px;
+	animation-name: rubberBand;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+}
+
+.deck .card.unmatched {
+	animation-name: pulse;
+	-webkit-backface-visibility: visible !important;
+	backface-visibility: visible !important;
+	animation-duration: .75s;
+	background: #e2043b;
+}
+
+.deck .card.disabled {
+	pointer-events: none;
+	opacity: 0.9;
+}
+
+/* SCORE PANEL */
+
+.score-panel {
+    text-align: left;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+/* .score-panel .restart {
+    float: right;
+    cursor: pointer;
+} */
+
+.timer {
+    /* display: inline-block; */
+    margin: 0 1rem;
+}
+
+/* .lollipop {
     background-image: url('https://images.unsplash.com/photo-1575224300306-1b8da36134ec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2FuZHl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=350&q=60');
     background-position: cover;
+    width: 30%;
+    aspect-ratio: 1/1;
 }
 
 .popsicle {
@@ -49,9 +142,9 @@ h1 {
 .cupcake {
     background-image: url('https://images.unsplash.com/photo-1599785209707-a456fc1337bb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3VwY2FrZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=350&q=60');
     background-position: cover;
-}
+} */
 
-.card-back {
+/* .card-back {
     height: 0;
     padding-bottom: 100%;
     background-position: center;
@@ -61,30 +154,29 @@ h1 {
     transition: .4s all linear;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-}
+} */
 
-.card.flip .card-front, .card.flip .card-back{
+/* .card.flip .card-front, .card.flip .card-back{
     transform: rotateY(0deg);
-}
+} */
 
-.card-front {
+/* .card-front {
     height: 100%;
     transform-style: preserve-3d;
     transform: rotateY(180deg);
     transition: .4s all linear;
-    /* display: inline-block; */
     position: absolute;
     left: 0;
     top: 0;
     background-image: linear-gradient(to right bottom, #b2cdf6, #a5c5f6, #97bdf6, #89b5f6, #7badf6);
     box-shadow: 3px 6px 18px #6d809d8a;
     border-radius: 8px;
-}
+} */
 
-.card-ok .card-front{
+/* .card-ok .card-front{
     background-image: linear-gradient(to right bottom, #b2f6b4, #a5f6b0, #a1f697, #7bdb8b, #76d679);
     opacity: 0.7;
-}
+} */
 
 /* .restart {
     font-family: 'Montserrat', serif;
